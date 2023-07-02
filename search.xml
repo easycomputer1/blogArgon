@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>从零开始构建自己的网站 (1) &lt;准备工作&gt;</title>
+      <link href="/2023/build-your-blog-1/"/>
+      <url>/2023/build-your-blog-1/</url>
+      
+        <content type="html"><![CDATA[<p>服务器一时半会维修不好，我就先用 hexo 先开个新坑吧，以后再转移到 WordPress 吧。      </p><p>以下正文开始：   </p><p>随着互联网的普及，很多人都有了自托管的网站博客。但是这方面的教程对于小白不太友好，所以我打算做个教程帮助大家。本文只介绍建造思路，技术问题请自行查询（持续更新）  </p><p>一般来讲，自托管一个网站需要以下两个条件： </p><ul><li>Web 服务器</li><li>域名<br>以下依次详细介绍。</li></ul><h1 id="Web-服务器"><a href="#Web-服务器" class="headerlink" title="Web 服务器"></a>Web 服务器</h1><p>想呈现自己的网站，我们需要一个载体 —— 服务器。服务器是网站的灵魂，是打开网站的关键。Web服务器是指驻留于因特网上某种类型计算机的程序，可以处理浏览器等Web客户端的请求并返回相应响应，也可以放置文件，实现浏览和下载。目前最主流的三个Web服务器是Apache、 Nginx 、IIS。  </p><h2 id="获取服务器"><a href="#获取服务器" class="headerlink" title="获取服务器"></a>获取服务器</h2><p>目前诸多大型互联网公司都拥有自己的云计算服务，如阿里云，腾讯云，百度云，华为云这些偏向于国内的服务器，此外还有 Microsoft Azure，AWS，Oracle Cloud，Google Drive 等国际服务器。   </p><p>选择服务器的配置主要取决于网站的流量，一般来讲，普通的小型博客 1核 2G 轻量服务器 可以满足大部分需求。  </p><p>而不同的服务器厂商计划不一样，大家可以货比三家，并尽量选择稳定的厂商，然后做出决定。一般来讲，国内服务器在备案后访问速度更快，而如果服务主要面向国际，可以选择国际的服务器。</p><h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>如果不是面板服，那么一般可以安装的系统是 Linux 系统，如 Ubuntu，Cent OS 等，若配置高点，还可以选择 Windows Server。   </p><p>若要当作 web 服务器，我个人推荐 Linux 类系统，因为对于 Docker 等插件的支持更好，只是学习需要一定的难度，Windows Server 就变得简单了不少。   </p><p>购买了服务器，现在博客使用最广泛的就是宝塔面板，然后搭配 WordPress 使用，这个我会在以后强调安装方法。<br><img src="https://img.tucang.cc/api/image/show/8a44292309971f6d0fb489bac304d4f7" alt="WordPress"></p><h2 id="服务器地址"><a href="#服务器地址" class="headerlink" title="服务器地址"></a>服务器地址</h2><p>一般来讲，在购买服务器后，会有一个 ip 地址，这个 ip 地址将作为域名连接服务器的关键</p><h2 id="静态网站托管"><a href="#静态网站托管" class="headerlink" title="静态网站托管"></a>静态网站托管</h2><p>以上讲述的都是动态网站，而对于不想承担过多费用的小伙伴们可以尝试静态网站。可以免费托管静态网站的厂商有很多，我个人用的是 Netlify，静态网站可以用的建站工具有 hexo，mkdocs，vuepress等。与动态网站不同的是，静态网站不支持 php，asp.net 等，所以评论工具需要借助 Waline，Gittalk 等插件使用。</p><h2 id="防护与保护"><a href="#防护与保护" class="headerlink" title="防护与保护"></a>防护与保护</h2><p>我推荐对你的网站及时进行备份和攻击防御，毕竟，数据无价。</p><h1 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h1><p>有了可以查看网站的载体，你需要让别人找到你的网站，这里需要借助域名了。    </p><h2 id="购买一级域名"><a href="#购买一级域名" class="headerlink" title="购买一级域名"></a>购买一级域名</h2><p>例如 “ecomter.live”，这就是一个一级域名。一般一级域名都是收费的，我们就需要购买一级域名。  </p><p>现在可以购买的厂商有很多，除了上文提供的服务器厂商，还有 NAME.com，GoDaddy，西部数码等可以选择。选购域名大家也可以货比三家。   </p><p>选购域名时，不同的后缀价位不一样，有 .com，.cn，.tech，.org 等众多后缀，前缀大家可以自行选择，不过如果域名被占用了，大家就需要选择一个新的咯。  </p><p><img src="https://img.tucang.cc/api/image/show/654561ff382e88534c2f3d18a5ba8b33" alt="图为我的个人域名"></p><p>域名注册好后，如果想要连接国内服务器和国内 CDN，就需要进行备案，这个可以查看本地监管局的要求进行域名备案。</p><h2 id="解析域名"><a href="#解析域名" class="headerlink" title="解析域名"></a>解析域名</h2><p>大家可以自行选择一个 DNS 服务器，在购买域名处设置相应的 ns 记录，然后就可以在 DNS 服务器解析到自己的 服务器了。一般支持 A，AAAA，CNAME，TXT 等多种记录方式。</p><h3 id="二级域名"><a href="#二级域名" class="headerlink" title="二级域名"></a>二级域名</h3><p>例如 blog.ecomter.live 就是一个二级域名。<br>我这里用 Cloudflare DNS 记录来简单演示一下 二级域名的分配方式。  </p><p>只需要在新建时更改名称就可以了<br><img src="https://img.tucang.cc/api/image/show/be70ec540ab4e2d7d665fd08fbc3881e" alt="二级域名 blog"></p><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>cdn 就是内容分发网络，可以优化网站的速度，一般在云服务提供商可以进行购买。   </p><p>下一期，我将会为大家提供详细的解决方案</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 网页 </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>网站维修通知</title>
       <link href="/2023/info/"/>
       <url>/2023/info/</url>
